@@ -12,17 +12,20 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
+        - any
         - jessie
         - wheezy
     - name: EL
       versions:
+        - any
         - 7
         - 6
     - name: openSUSE
       versions:
-        - 42 
+        - any 
     - name: Ubuntu
       versions:
+        - any
         - xenial
         - trusty
         - precise
