@@ -14,10 +14,13 @@ galaxy_info:
       versions:
         - jessie
         - wheezy
+    - name: EL
+      versions:
+        - 7
+        - 6
     - name: openSUSE
       versions:
-        - leap
-        - tumbleweed
+        - 42 
     - name: Ubuntu
       versions:
         - xenial
