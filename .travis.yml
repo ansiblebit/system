@@ -26,7 +26,7 @@ notifications:
       - "%{elapsed_time} : %{duration}"
       - "%{message}"
     rooms:
-      secure: NnbcOuvDwjTK1orHxC/LyRhuRZghPt8kliCGBpvBh4exKrr8XjFMoStAOKwu/9KzKDeKzufDTVP4QGNYVp7aQZnTQwJapNTShA47ffAKVAyw9qjGzmOofp3yCo7G9qvAzfeL+E7+4ssnH6Kp1wq1GT79deevl15IjAkzYiRTlUk=
+      secure: i9deLlfOsAolgdBQfpI0orOoVjvUCUgxYyyPokbj3IliZolZx8m6ad/3zS9HLYzvQcNOs+I0PD+vfCcfLyDRGoKtjXmLyPso8h9+7B5l9k4Z+/423xVl/frwdwz3oa67xGaYc1T4c1Gk+onmjbL1JW8dmHbjw+PH/szOoMOdFrXlc9Iut6Pj72x4VWvO0zcad5lKwYRviGiXPS2V9sSpxRI2/aRtYStbUEqt9dkqMbQwR0ekWswX5UsBb2n14q8a4ZlDgt1nOgekBw4ZtaWtShPhfgwWeovfbfcu3lxFGedDFmOrKHpmz7e1NJIv2spEtlHK6glSDoHEZMP456xY1AKqPcAVfCI6mQfNAKQ9Su540GDalEjzPdoN1zfW9bXlVN0vI0uBxeM9J57lrFaIpUUcegiHdiTaulafi/TTXyvoPT2QmRFtFizQvR1VZuINcj4waQy5F8HTyq9+syETK5nLs2k479Zr1FkzWMXFqOdJSuB/k5QxAG3T7sJFHVwzVkxgQPeh1Kf9LqF2ThjP5bEGTVtfyR6Ld3L0JWPu9YDqzPjnO9Y5BMs+5vhXNP5KHvSKo6d7eQZe68PmuxKZAnOzuuZaKrG/a/reHNHoDxt79K3kdez64/PtevYD8aEf5aL5UIT5uRmooUXHKmUeStDCQ9xMwMrzJX65osqcDUc=
     on_success: always
     on_failure: always
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
