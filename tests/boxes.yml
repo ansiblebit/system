@@ -61,6 +61,23 @@ vagrant:
       ip: 192.168.123.4
 
 
+  # OpenSUSE
+
+  leap64.vagrant.dev:
+    enabled: true
+    box: opensuse/openSUSE-42.1-x86_64
+    network:
+      name: private_network
+      ip: 192.168.125.2
+
+  tumbleweed64.vagrant.dev:
+    enabled: true
+    box: opensuse/openSUSE-Tumbleweed-x86_64
+    network:
+      name: private_network
+      ip: 192.168.125.4
+
+
   # Ubuntu
 
   precise64.vagrant.dev:
