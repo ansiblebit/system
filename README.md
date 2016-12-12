@@ -1,7 +1,7 @@
-# primogen
+# user
 
-[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/ansiblebit/primogen/master/LICENSE)
-[![Build Status](https://travis-ci.org/ansiblebit/primogen.svg?branch=master)](https://travis-ci.org/ansiblebit/primogen)
+[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/ansiblebit/user/master/LICENSE)
+[![Build Status](https://travis-ci.org/ansiblebit/user.svg?branch=master)](https://travis-ci.org/ansiblebit/user)
 
 [![Platform](http://img.shields.io/badge/platform-amazon-ff9900.svg?style=flat)](#)
 [![Platform](http://img.shields.io/badge/platform-debian-a80030.svg?style=flat)](#)
@@ -17,9 +17,9 @@
 [![Platform](http://img.shields.io/badge/platform-ubuntu-dd4814.svg?style=flat)](#)
 [![Platform](http://img.shields.io/badge/platform-windows-004185.svg?style=flat)](#)
 
-[![Project Stats](https://www.openhub.net/p/ansiblebit-primogen/widgets/project_thin_badge.gif)](https://www.openhub.net/p/ansiblebit-primogen/)
+[![Project Stats](https://www.openhub.net/p/ansiblebit-user/widgets/project_thin_badge.gif)](https://www.openhub.net/p/ansiblebit-user/)
 
-A brief description of the role goes here.
+[Ansible][ansible] to setup user accounts.
 
 
 ## Tests
@@ -40,41 +40,30 @@ A brief description of the role goes here.
 
 ## Requirements
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here.
-For instance, if the role uses the EC2 module,
-it may be a good idea to mention in this section that the boto package is required.
-
-- ansible >= 2.0
+- [ansible][ansible] >= 2.0
 
 
 ## Role Variables
 
-A description of the settable variables for this role should go here,
-including any variables that are in defaults/main.yml, vars/main.yml and
-any variables that can/should be set via parameters to the role.
-
-Any variables that are read from other roles and/or
-the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
 - **debug**: flag to run debug tasks.
+
+- **system_ssh_dir_public_keys**: directory where SSH public keys are stored.
+- **system_ssh_dir_deprecated_keys**: directory where SSH deprecated public keys are stored.
+- **system_groups**: system's groups.
+- **system_ssh_deprecated_keys**: list of SSH keys that have been deprecated.
+- **system_users**: system's user accounts.
 
 
 ## Dependencies
 
-A list of other roles hosted on Galaxy should go here,
-plus any details in regards to parameters that may need to be set for other roles
-or variables that are used from other roles.
+None.
 
 
 ## Playbooks
 
-Including an example of how to use your role
-(for instance, with variables passed in as parameters)
-is always nice for users too:
-
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - role: ansiblebit.user
 
 
 ## Tags
@@ -83,6 +72,11 @@ is always nice for users too:
 - **debug**: task to debug role variables.
 - **installation**: installation tasks.
 - **validation**: task to validate role variables.
+
+- **system_authorized_keys**: 
+- **system_debug**: 
+- **system_group**: 
+- **system_user**: 
 
 
 ## Test
