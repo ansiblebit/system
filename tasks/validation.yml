@@ -24,3 +24,9 @@
     msg="user {{ item.key }} is missing a 'name' key"
   when: "{{ item.value.name is not defined }}"
   with_dict: "{{ system_users }}"
+
+- name: ensure system_users elements have a authorized key
+  fail:
+    msg="user {{ item.key }} is missing a 'authorized' key"
+  when: "{{ item.value.authorized is not defined }}"
+  with_dict: "{{ system_users }}"
