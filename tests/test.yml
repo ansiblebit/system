@@ -21,11 +21,11 @@
     system_groups:
       secondary:
         name: secondary
-        gid: 2001
+        gid: 2002
 
     system_users:
       custom_user:
-        uid: 1002
+        uid: 2001
         name: customuser
         groups: secondary
         createhome: yes
