@@ -1,5 +1,5 @@
 ---
-# file: primogen/tests/test.yml
+# file: system/tests/test.yml
 
 - name: setup python2
   hosts: "{{ vagrant_box }}"
@@ -18,9 +18,21 @@
   vars:
     debug: yes
 
+    system_groups:
+      secondary:
+        name: secondary
+        gid: 2001
+
+    system_users:
+      custom_user:
+        uid: 1002
+        name: customuser
+        groups: secondary
+        createhome: yes
+        authorized: []
+
   roles:
-    - role: primogen
+    - role: system
 
     - role: tests
       tags: test
-
