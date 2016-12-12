@@ -9,4 +9,8 @@
   when: "{{ item }} is defined"
   with_items:
     - debug
-
+    - system_groups
+    - system_ssh_deprecated_keys
+    - system_ssh_dir_deprecated_keys
+    - system_ssh_dir_public_keys
+    - system_users

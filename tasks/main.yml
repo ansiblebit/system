@@ -1,16 +1,66 @@
 ---
-# file: primogen/tasks/main.yml
+# file: system/tasks/main.yml
 #
 # tasks file
 #
 
 - include: debug.yml
   when: debug | default(false)
-  tags: debug
+  tags: [ debug, system_debug ]
 
 - include: validation.yml
-  tags: validation
+  tags: [ system_validation, validation ]
 
-- debug: >
-    msg="invoked"
+- name: setup groups
+  group:
+    gid="{{ item.value.gid | default(omit) }}"
+    name="{{ item.value.name }}"
+    state="{{ item.value.state | default('present') }}"
+    system="{{ item.value.system | default(omit) }}"
+  become: yes
+  with_dict: "{{ system_groups }}"
+  tags: system_group
 
+- name: setup accounts
+  user:
+    name="{{ item.value.name }}"
+    comment="{{ item.value.comment | default(omit) }}"
+    createhome="{{ item.value.createhome | default(omit) }}"
+    expires="{{ item.value.expires | default(omit) }}"
+    force="{{ item.value.force | default(omit) }}"
+    group="{{ item.value.group | default(omit) }}"
+    groups="{{ item.value.groups | default(omit) }}"
+    home="{{ item.value.home | default(omit) }}"
+    login_class="{{ item.value.login_class | default(omit) }}"
+    non_unique="{{ item.value.non_unique | default(omit) }}"
+    password="{{ item.value.password | default(omit) }}"
+    remote="{{ item.value.remove | default(omit) }}"
+    seuser="{{ item.value.seuser | default(omit) }}"
+    shell="{{ item.value.shell | default(omit) }}"
+    state="{{ item.value.state | default('present') }}"
+    system="{{ item.value.system | default(omit) }}"
+    uid="{{ item.value.uid | default(omit) }}"
+  become: yes
+  with_dict: "{{ system_users }}"
+  tags: system_user
+
+- name: setup ssh authorized keys
+  authorized_key:
+    user="{{ item.0.name }}"
+    key="{{ lookup('file', '{{ system_ssh_dir_public_keys }}/{{ item.1.value }}.pub') }}"
+  when: system_ssh_dir_public_keys is defined
+  with_subelements:
+    - "{{ system_users }}"
+    - authorized
+  tags: [ system_authorized_keys, system_user ]
+
+- name: remove deprecated ssh keys
+  authorized_key:
+    user="{{ item.0.name }}"
+    key="{{ lookup('file', '{{ system_ssh_dir_deprecated_keys }}/{{ item.1.value }}') }}"
+    state=absent
+  when: system_ssh_dir_deprecated_keys is defined and system_ssh_deprecated_keys is defined
+  with_nested:
+    - "{{ system_users }}"
+    - "{{ system_ssh_deprecated_keys }}"
+  tags: [ system_authorized_keys, system_user ]

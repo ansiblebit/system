@@ -1,5 +1,9 @@
 ---
-# file: primogen/defaults/main.yml
+# file: system/defaults/main.yml
 #
 # defaults file
 #
+
+system_groups: {}
+system_ssh_deprecated_keys: []
+system_users: {}
