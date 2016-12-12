@@ -1,41 +1,37 @@
-# user
+# system
 
-[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/ansiblebit/user/master/LICENSE)
-[![Build Status](https://travis-ci.org/ansiblebit/user.svg?branch=master)](https://travis-ci.org/ansiblebit/user)
+[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/ansiblebit/system/master/LICENSE)
+[![Build Status](https://travis-ci.org/ansiblebit/system.svg?branch=master)](https://travis-ci.org/ansiblebit/system)
 
-[![Platform](http://img.shields.io/badge/platform-amazon-ff9900.svg?style=flat)](#)
 [![Platform](http://img.shields.io/badge/platform-debian-a80030.svg?style=flat)](#)
 [![Platform](http://img.shields.io/badge/platform-centos-932279.svg?style=flat)](#)
 [![Platform](http://img.shields.io/badge/platform-fedora-3c6eb4.svg?style=flat)](#)
-[![Platform](http://img.shields.io/badge/platform-freebsd-ae0000.svg?style=flat)](#)
-[![Platform](http://img.shields.io/badge/platform-macosx-000000.svg?style=flat)](#)
-[![Platform](http://img.shields.io/badge/platform-mint-87cfbe.svg?style=flat)](#)
 [![Platform](http://img.shields.io/badge/platform-opensuse-73ba25.svg?style=flat)](#)
 [![Platform](http://img.shields.io/badge/platform-redhat-cc0000.svg?style=flat)](#)
-[![Platform](http://img.shields.io/badge/platform-sles-73ba25.svg?style=flat)](#)
-[![Platform](http://img.shields.io/badge/platform-smartos-487487.svg?style=flat)](#)
 [![Platform](http://img.shields.io/badge/platform-ubuntu-dd4814.svg?style=flat)](#)
-[![Platform](http://img.shields.io/badge/platform-windows-004185.svg?style=flat)](#)
 
-[![Project Stats](https://www.openhub.net/p/ansiblebit-user/widgets/project_thin_badge.gif)](https://www.openhub.net/p/ansiblebit-user/)
+[![Project Stats](https://www.openhub.net/p/ansiblebit-system/widgets/project_thin_badge.gif)](https://www.openhub.net/p/ansiblebit-system/)
 
-[Ansible][ansible] to setup user accounts.
+[Ansible][ansible] to setup user groups, user accounts and authorized keys.
 
 
 ## Tests
 
 | Family | Distribution | Version | Test Status |
 |:-:|:-:|:-:|:-:|
-| Debian | Debian  | Jessie  | [![x86](http://img.shields.io/badge/x86-n/a-cccccc.svg?style=flat)](#) [![x86_64](http://img.shields.io/badge/x86_64-n/a-cccccc.svg?style=flat)](#) |
-| Debian | Debian  | Wheezy  | [![x86](http://img.shields.io/badge/x86-n/a-cccccc.svg?style=flat)](#) [![x86_64](http://img.shields.io/badge/x86_64-n/a-cccccc.svg?style=flat)](#) |
-| Debian | Ubuntu  | Precise | [![x86](http://img.shields.io/badge/x86-n/a-cccccc.svg?style=flat)](#) [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#)  |
-| Debian | Ubuntu  | Trusty  | [![x86](http://img.shields.io/badge/x86-n/a-cccccc.svg?style=flat)](#) [![x86_64](http://img.shields.io/badge/x86_64-n/a-cccccc.svg?style=flat)](#) |
-| Debian | Ubuntu  | Vivid   | [![x86](http://img.shields.io/badge/x86-n/a-cccccc.svg?style=flat)](#) [![x86_64](http://img.shields.io/badge/x86_64-n/a-cccccc.svg?style=flat)](#) |
-| RedHat | CentOS  | 6.4     | [![x86](http://img.shields.io/badge/x86-n/a-cccccc.svg?style=flat)](#) [![x86_64](http://img.shields.io/badge/x86_64-n/a-cccccc.svg?style=flat)](#) |
-| RedHat | CentOS  | 6.6     | [![x86](http://img.shields.io/badge/x86-n/a-cccccc.svg?style=flat)](#) [![x86_64](http://img.shields.io/badge/x86_64-n/a-cccccc.svg?style=flat)](#) |
-| RedHat | Centos  | 7       | [![x86](http://img.shields.io/badge/x86-n/a-cccccc.svg?style=flat)](#) [![x86_64](http://img.shields.io/badge/x86_64-n/a-cccccc.svg?style=flat)](#) |
-| RedHat | Fedora  | 20      | [![x86](http://img.shields.io/badge/x86-n/a-cccccc.svg?style=flat)](#) [![x86_64](http://img.shields.io/badge/x86_64-n/a-cccccc.svg?style=flat)](#) |
-| RedHat | Fedora  | 21      | [![x86](http://img.shields.io/badge/x86-n/a-cccccc.svg?style=flat)](#) [![x86_64](http://img.shields.io/badge/x86_64-n/a-cccccc.svg?style=flat)](#) |
+| Debian | Debian   | Wheezy     | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
+| Debian | Debian   | Jessie     | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
+| Debian | Ubuntu   | Yakkety    | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
+| Debian | Ubuntu   | Xenial     | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
+| Debian | Ubuntu   | Vivid      | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
+| Debian | Ubuntu   | Trusty     | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
+| Debian | Ubuntu   | Precise    | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
+| Suse   | OpenSUSE | Leap       | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
+| Suse   | OpenSUSE | Tumbleweed | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
+| RedHat | Centos   | 7          | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
+| RedHat | CentOS   | 6          | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
+| RedHat | Fedora   | 21         | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
+| RedHat | Fedora   | 20         | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
 
 
 ## Requirements
@@ -71,12 +67,13 @@ None.
 - **configuration**: configuration tasks.
 - **debug**: task to debug role variables.
 - **installation**: installation tasks.
-- **validation**: task to validate role variables.
+- **validation**: validation tasks.
 
-- **system_authorized_keys**: 
-- **system_debug**: 
-- **system_group**: 
-- **system_user**: 
+- **system_authorized_keys**: authorized keys setup tasks.
+- **system_debug**: role specific debug tasks.
+- **system_group**: group setup tasks.
+- **system_user**: user setup tasks.
+- **system_validation**: role specific validation tasks.
 
 
 ## Test
