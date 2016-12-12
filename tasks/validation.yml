@@ -1,5 +1,5 @@
 ---
-# file: primogen/tasks/validation.yml
+# file: system/tasks/validation.yml
 #
 # validation tasks.
 #
@@ -9,5 +9,18 @@
     msg="{{ item }} is a mandatory variable"
   when: "{{ item }} is not defined"
   with_items:
-    - debug
+    - system_groups
+    - system_ssh_deprecated_keys
+    - system_users
 
+- name: ensure system_groups elements have a name key
+  fail:
+    msg="group {{ item.key }} is missing a 'name' key"
+  when: "{{ item.value.name is not defined }}"
+  with_dict: "{{ system_groups }}"
+
+- name: ensure system_users elements have a name key
+  fail:
+    msg="user {{ item.key }} is missing a 'name' key"
+  when: "{{ item.value.name is not defined }}"
+  with_dict: "{{ system_users }}"
