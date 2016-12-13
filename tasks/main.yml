@@ -47,7 +47,7 @@
 - name: setup ssh authorized keys
   authorized_key:
     user="{{ item.0.name }}"
-    key="{{ lookup('file', '{{ system_ssh_dir_public_keys }}/{{ item.1.value }}.pub') }}"
+    key="{{ lookup('file', '{{ system_ssh_dir_public_keys }}/{{ item.1 }}.pub') }}"
   when: system_ssh_dir_public_keys is defined
   with_subelements:
     - "{{ system_users }}"
@@ -56,8 +56,8 @@
 
 - name: remove deprecated ssh keys
   authorized_key:
-    user="{{ item.0.name }}"
-    key="{{ lookup('file', '{{ system_ssh_dir_deprecated_keys }}/{{ item.1.value }}') }}"
+    user="{{ system_users[item.0].name }}"
+    key="{{ lookup('file', '{{ system_ssh_dir_deprecated_keys }}/{{ item.1 }}.pub') }}"
     state=absent
   when: system_ssh_dir_deprecated_keys is defined and system_ssh_deprecated_keys is defined
   with_nested:
