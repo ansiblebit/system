@@ -60,7 +60,7 @@ None.
 
     - hosts: servers
       roles:
-         - role: ansiblebit.user
+         - role: ansiblebit.system
 
 
 ## Tags
